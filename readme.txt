@@ -1,8 +1,9 @@
 === Steep ===
 Contributors: rabmalin
-Requires at least: 4.6
-Tested up to: 4.8
-Stable tag: 1.0.1
+Requires at least: 5.0
+Requires PHP: 5.6
+Tested up to: 5.2
+Stable tag: 1.0.2
 
 A simple WordPress theme.
 
@@ -32,6 +33,10 @@ Stargazer WordPress Theme is distributed under the terms of the GNU GPL
 * In the screenshot, https://wordpress.org/plugins/wp-tab-widget/ plugin is used for Tabbed widget.
 
 == Changelog ==
+
+= 1.0.2 - 24 Jun 2019 =
+* WP 5.2 compatibility
+* Minor bug fixes
 
 = 1.0.1 - 5 Jul 2017 =
 * Minor bug fixes
