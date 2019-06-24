@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme widgets.
+ * Theme widgets
  *
  * @package Steep
  */
@@ -13,19 +13,16 @@ if ( ! function_exists( 'steep_load_widgets' ) ) :
 	 * @since 1.0.0
 	 */
 	function steep_load_widgets() {
-
 		// Social widget.
 		register_widget( 'Steep_Social_Widget' );
 
 		// Latest News widget.
 		register_widget( 'Steep_Latest_News_Widget' );
-
 	}
 
 endif;
 
 add_action( 'widgets_init', 'steep_load_widgets' );
-
 
 if ( ! class_exists( 'Steep_Social_Widget' ) ) :
 
@@ -61,7 +58,6 @@ if ( ! class_exists( 'Steep_Social_Widget' ) ) :
 		 * @param array $instance The settings for the particular instance of the widget.
 		 */
 		function widget( $args, $instance ) {
-
 			$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 			$size  = ! empty( $instance['size'] ) ? $instance['size'] : 'medium';
 
@@ -73,19 +69,20 @@ if ( ! class_exists( 'Steep_Social_Widget' ) ) :
 			}
 
 			if ( has_nav_menu( 'social' ) ) {
-				wp_nav_menu( array(
-					'theme_location' => 'social',
-					'container'      => false,
-					'menu_class'     => 'size-' . esc_attr( $size ),
-					'depth'          => 1,
-					'link_before'    => '<span class="screen-reader-text">',
-					'link_after'     => '</span>',
-					'item_spacing'   => 'discard',
-				) );
+				wp_nav_menu(
+					array(
+						'theme_location' => 'social',
+						'container'      => false,
+						'menu_class'     => 'size-' . esc_attr( $size ),
+						'depth'          => 1,
+						'link_before'    => '<span class="screen-reader-text">',
+						'link_after'     => '</span>',
+						'item_spacing'   => 'discard',
+					)
+				);
 			}
 
 			echo $args['after_widget'];
-
 		}
 
 		/**
@@ -115,14 +112,16 @@ if ( ! class_exists( 'Steep_Social_Widget' ) ) :
 		 * @param array $instance Current settings.
 		 */
 		function form( $instance ) {
-
 			// Defaults.
-			$instance = wp_parse_args( (array) $instance, array(
-				'title' => '',
-				'size'  => 'medium',
-			) );
-			$title = $instance['title'];
-			$size  = $instance['size'];
+			$instance = wp_parse_args(
+				(array) $instance,
+				array(
+					'title' => '',
+					'size'  => 'medium',
+				)
+			);
+			$title    = $instance['title'];
+			$size     = $instance['size'];
 
 			// Social menu status.
 			$is_menu_set = ( has_nav_menu( 'social' ) ) ? true : false;
@@ -134,10 +133,11 @@ if ( ! class_exists( 'Steep_Social_Widget' ) ) :
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'size' ) ); ?>"><?php esc_html_e( 'Size:', 'steep' ); ?></label>
 				<?php
-				$this->dropdown_size( array(
-					'id'       => $this->get_field_id( 'size' ),
-					'name'     => $this->get_field_name( 'size' ),
-					'selected' => esc_attr( $size ),
+				$this->dropdown_size(
+					array(
+						'id'       => $this->get_field_id( 'size' ),
+						'name'     => $this->get_field_name( 'size' ),
+						'selected' => esc_attr( $size ),
 					)
 				);
 				?>
@@ -145,10 +145,10 @@ if ( ! class_exists( 'Steep_Social_Widget' ) ) :
 
 			<?php if ( false === $is_menu_set ) : ?>
 				<p>
-					<?php echo esc_html__( 'Social menu is not set. Please create menu and assign it to Social menu.', 'steep' ); ?>
+					<?php esc_html_e( 'Social menu is not set. Please create menu and assign it to Social menu.', 'steep' ); ?>
 				</p>
 			<?php endif; ?>
-		<?php
+			<?php
 		}
 
 		/**
@@ -168,6 +168,7 @@ if ( ! class_exists( 'Steep_Social_Widget' ) ) :
 			);
 
 			$r = wp_parse_args( $args, $defaults );
+
 			$output = '';
 
 			$choices = array(
@@ -192,7 +193,6 @@ if ( ! class_exists( 'Steep_Social_Widget' ) ) :
 			}
 
 			return $output;
-
 		}
 	}
 
@@ -217,7 +217,7 @@ if ( ! class_exists( 'Steep_Latest_News_Widget' ) ) :
 				'classname'                   => 'steep_widget_latest_news',
 				'description'                 => esc_html__( 'Latest News Widget. Displays latest posts in grid.', 'steep' ),
 				'customize_selective_refresh' => true,
-				);
+			);
 
 			parent::__construct( 'steep-latest-news', esc_html__( 'Steep: Latest News', 'steep' ), $opts );
 		}
@@ -232,10 +232,9 @@ if ( ! class_exists( 'Steep_Latest_News_Widget' ) ) :
 		 * @param array $instance The settings for the particular instance of the widget.
 		 */
 		function widget( $args, $instance ) {
-
 			$title          = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 			$post_category  = ! empty( $instance['post_category'] ) ? $instance['post_category'] : 0;
-			$post_layout  = ! empty( $instance['post_layout'] ) ? $instance['post_layout'] : 1;
+			$post_layout    = ! empty( $instance['post_layout'] ) ? $instance['post_layout'] : 1;
 			$post_column    = ! empty( $instance['post_column'] ) ? $instance['post_column'] : 4;
 			$featured_image = ! empty( $instance['featured_image'] ) ? $instance['featured_image'] : 'steep-thumb';
 			$post_number    = ! empty( $instance['post_number'] ) ? $instance['post_number'] : 4;
@@ -266,7 +265,10 @@ if ( ! class_exists( 'Steep_Latest_News_Widget' ) ) :
 
 					<div class="inner-wrapper">
 
-						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+						<?php
+						while ( $the_query->have_posts() ) :
+							$the_query->the_post();
+							?>
 
 							<div class="latest-news-item">
 							<?php $image_class = ( 'disable' === $featured_image || ! has_post_thumbnail() ) ? 'no-featured-image' : ''; ?>
@@ -320,7 +322,6 @@ if ( ! class_exists( 'Steep_Latest_News_Widget' ) ) :
 			<?php endif; ?>
 			<?php
 			echo $args['after_widget'];
-
 		}
 
 		/**
@@ -354,25 +355,27 @@ if ( ! class_exists( 'Steep_Latest_News_Widget' ) ) :
 		 * @param array $instance Current settings.
 		 */
 		function form( $instance ) {
-
 			// Defaults.
-			$instance = wp_parse_args( (array) $instance, array(
-				'title'          => '',
-				'post_category'  => '',
-				'post_layout'    => 1,
-				'post_column'    => 2,
-				'featured_image' => 'steep-thumb',
-				'post_number'    => 4,
-				'excerpt_length' => 15,
-				'more_text'      => esc_html__( 'Read more', 'steep' ),
-			) );
+			$instance = wp_parse_args(
+				(array) $instance,
+				array(
+					'title'          => '',
+					'post_category'  => '',
+					'post_layout'    => 1,
+					'post_column'    => 2,
+					'featured_image' => 'steep-thumb',
+					'post_number'    => 4,
+					'excerpt_length' => 15,
+					'more_text'      => esc_html__( 'Read more', 'steep' ),
+				)
+			);
 			?>
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'steep' ); ?></label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 			</p>
 			<p>
-				<label for="<?php echo  esc_attr( $this->get_field_id( 'post_category' ) ); ?>"><?php esc_html_e( 'Select Category:', 'steep' ); ?></label>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'post_category' ) ); ?>"><?php esc_html_e( 'Select Category:', 'steep' ); ?></label>
 				<?php
 				$cat_args = array(
 					'orderby'         => 'name',
@@ -381,7 +384,7 @@ if ( ! class_exists( 'Steep_Latest_News_Widget' ) ) :
 					'name'            => $this->get_field_name( 'post_category' ),
 					'id'              => $this->get_field_id( 'post_category' ),
 					'selected'        => $instance['post_category'],
-					'show_option_all' => esc_html__( 'All Categories','steep' ),
+					'show_option_all' => esc_html__( 'All Categories', 'steep' ),
 				);
 				wp_dropdown_categories( $cat_args );
 				?>
@@ -404,10 +407,11 @@ if ( ! class_exists( 'Steep_Latest_News_Widget' ) ) :
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'featured_image' ) ); ?>"><?php esc_html_e( 'Select Image Size:', 'steep' ); ?></label>
 				<?php
-				$this->dropdown_image_sizes( array(
-					'id'       => $this->get_field_id( 'featured_image' ),
-					'name'     => $this->get_field_name( 'featured_image' ),
-					'selected' => $instance['featured_image'],
+				$this->dropdown_image_sizes(
+					array(
+						'id'       => $this->get_field_id( 'featured_image' ),
+						'name'     => $this->get_field_name( 'featured_image' ),
+						'selected' => $instance['featured_image'],
 					)
 				);
 				?>
@@ -419,15 +423,24 @@ if ( ! class_exists( 'Steep_Latest_News_Widget' ) ) :
 			<?php
 		}
 
+		/**
+		 * Render image size dropdown.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $args Arguments.
+		 * @return string Rendered content.
+		 */
 		function dropdown_image_sizes( $args ) {
 			$defaults = array(
 				'id'       => '',
 				'name'     => '',
 				'selected' => 0,
 				'echo'     => 1,
-				);
+			);
 
 			$r = wp_parse_args( $args, $defaults );
+
 			$output = '';
 
 			$choices = $this->get_image_sizes_options();
@@ -446,29 +459,29 @@ if ( ! class_exists( 'Steep_Latest_News_Widget' ) ) :
 			if ( $r['echo'] ) {
 				echo $output;
 			}
-			return $output;
 
+			return $output;
 		}
 
 		function get_image_sizes_options() {
-
 			global $_wp_additional_image_sizes;
 
 			$choices = array();
+
 			foreach ( array( 'thumbnail', 'medium', 'large' ) as $key => $_size ) {
 				$choices[ $_size ] = $_size . ' (' . get_option( $_size . '_size_w' ) . 'x' . get_option( $_size . '_size_h' ) . ')';
 			}
-			$choices['full'] = __( 'full (original)', 'steep' );
-			if ( ! empty( $_wp_additional_image_sizes ) && is_array( $_wp_additional_image_sizes ) ) {
 
+			$choices['full'] = __( 'full (original)', 'steep' );
+
+			if ( ! empty( $_wp_additional_image_sizes ) && is_array( $_wp_additional_image_sizes ) ) {
 				foreach ( $_wp_additional_image_sizes as $key => $size ) {
 					$choices[ $key ] = $key . ' (' . $size['width'] . 'x' . $size['height'] . ')';
 				}
 			}
+
 			return $choices;
 		}
-
-
 	}
 
 endif;
