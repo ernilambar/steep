@@ -11,7 +11,7 @@
 
 <main <?php hybrid_attr( 'content' ); ?>>
 
-	<?php if ( !is_front_page() && !is_singular() && !is_404() ) : // If viewing a multi-post page ?>
+	<?php if ( ! is_front_page() && ! is_singular() && ! is_404() ) : // If viewing a multi-post page. ?>
 
 		<?php locate_template( array( 'misc/loop-meta.php' ), true ); // Loads the misc/loop-meta.php template. ?>
 

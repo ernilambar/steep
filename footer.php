@@ -1,4 +1,13 @@
-				<?php hybrid_get_sidebar( 'primary' ); // Loads the sidebar/primary.php template. ?>
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * @package Steep
+ */
+
+?>
+
+<?php hybrid_get_sidebar( 'primary' ); // Loads the sidebar/primary.php template. ?>
 
 			</div><!-- #main -->
 
@@ -15,28 +24,28 @@
 				<p class="credit">
 					<?php
 					printf(
-						__( 'Copyright &#169; %1$s %2$s.', 'steep' ),
+						esc_html__( 'Copyright &#169; %1$s %2$s.', 'steep' ),
 						date_i18n( 'Y' ),
 						hybrid_get_site_link()
-						);
+					);
 					printf(
-						' ' . __( '%1$s by %2$s.', 'steep' ),
-						__( 'Steep', 'steep' ),
-						'<a href="' . esc_url( 'http://nilambar.net' ) . '" target="_blank">'. __( 'Nilambar', 'steep' ) . '</a>'
-						);
+						' ' . esc_html__( '%1$s by %2$s.', 'steep' ),
+						esc_html__( 'Steep', 'steep' ),
+						'<a href="' . esc_url( 'http://nilambar.net' ) . '" target="_blank">' . esc_html__( 'Nilambar', 'steep' ) . '</a>'
+					);
 					?>
 				</p><!-- .credit -->
 				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'footer',
-					'container'      => 'nav',
-					'container_id'   => 'footer-navigation',
-					'depth'          => 1,
-					'fallback_cb'    => false,
-					) );
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer',
+						'container'      => 'nav',
+						'container_id'   => 'footer-navigation',
+						'depth'          => 1,
+						'fallback_cb'    => false,
+					)
+				);
 				?>
-
-
 			</div><!-- .wrap -->
 
 		</footer><!-- #footer -->

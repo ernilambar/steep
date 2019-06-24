@@ -1,3 +1,12 @@
+<?php
+/**
+ * The template for displaying the header
+ *
+ * @package Steep
+ */
+
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes( 'html' ); ?>>
 
@@ -6,11 +15,12 @@
 </head>
 
 <body <?php hybrid_attr( 'body' ); ?>>
+	<?php do_action( 'wp_body_open' ); ?>
 
 	<div id="container">
 
 		<div class="skip-link">
-			<a href="#content" class="screen-reader-text"><?php _e( 'Skip to content', 'steep' ); ?></a>
+			<a href="#content" class="screen-reader-text"><?php esc_html_e( 'Skip to content', 'steep' ); ?></a>
 		</div><!-- .skip-link -->
 
 		<?php hybrid_get_menu( 'primary' ); // Loads the menu/primary.php template. ?>
