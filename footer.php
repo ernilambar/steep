@@ -31,7 +31,7 @@
 					printf(
 						' ' . esc_html__( '%1$s by %2$s.', 'steep' ),
 						esc_html__( 'Steep', 'steep' ),
-						'<a href="' . esc_url( 'http://nilambar.net' ) . '" target="_blank">' . esc_html__( 'Nilambar', 'steep' ) . '</a>'
+						'<a href="' . esc_url( 'https://nilambar.net' ) . '" target="_blank">' . esc_html__( 'Nilambar', 'steep' ) . '</a>'
 					);
 					?>
 				</p><!-- .credit -->
