@@ -1,0 +1,185 @@
+# Copyright (C) 2019 Nilambar Sharma
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Steep 1.0.2\n"
+"Report-Msgid-Bugs-To: https://github.com/ernilambar/steep/issues\n"
+"POT-Creation-Date: 2019-06-24 06:41:47+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Nilambar Sharma <nilambar@outlook.com>\n"
+"Language-Team: \n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en_US\n"
+"X-Poedit-SearchPath-0: ../../steep\n"
+
+#: footer.php:27
+msgid "Copyright &#169; %1$s %2$s."
+msgstr ""
+
+#: footer.php:32
+msgid "%1$s by %2$s."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Steep"
+msgstr ""
+
+#: footer.php:34
+msgid "Nilambar"
+msgstr ""
+
+#: functions.php:33
+msgid "Sidebar for header right area."
+msgstr ""
+
+#: header.php:23
+msgid "Skip to content"
+msgstr ""
+
+#: inc/widgets.php:44
+msgid "Social Icons Widget"
+msgstr ""
+
+#: inc/widgets.php:48
+msgid "Steep: Social"
+msgstr ""
+
+#: inc/widgets.php:130 inc/widgets.php:374
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets.php:134
+msgid "Size:"
+msgstr ""
+
+#: inc/widgets.php:148
+msgid "Social menu is not set. Please create menu and assign it to Social menu."
+msgstr ""
+
+#: inc/widgets.php:175
+msgid "Small"
+msgstr ""
+
+#: inc/widgets.php:176
+msgid "Medium"
+msgstr ""
+
+#: inc/widgets.php:177
+msgid "Large"
+msgstr ""
+
+#: inc/widgets.php:178
+msgid "Extra Large"
+msgstr ""
+
+#: inc/widgets.php:218
+msgid "Latest News Widget. Displays latest posts in grid."
+msgstr ""
+
+#: inc/widgets.php:222
+msgid "Steep: Latest News"
+msgstr ""
+
+#: inc/widgets.php:297
+msgid "0 Comment"
+msgstr ""
+
+#: inc/widgets.php:297
+msgid "1 Comment"
+msgstr ""
+
+#: inc/widgets.php:297
+msgid "% Comments"
+msgstr ""
+
+#: inc/widgets.php:369
+msgid "Read more"
+msgstr ""
+
+#: inc/widgets.php:378
+msgid "Select Category:"
+msgstr ""
+
+#: inc/widgets.php:387
+msgid "All Categories"
+msgstr ""
+
+#: inc/widgets.php:393
+msgid "Select Layout:"
+msgstr ""
+
+#: inc/widgets.php:395
+msgid "One"
+msgstr ""
+
+#: inc/widgets.php:396
+msgid "Two"
+msgstr ""
+
+#: inc/widgets.php:400
+msgid "Number of Posts:"
+msgstr ""
+
+#: inc/widgets.php:404
+msgid "Number of Columns:"
+msgstr ""
+
+#: inc/widgets.php:408
+msgid "Select Image Size:"
+msgstr ""
+
+#: inc/widgets.php:420
+msgid "Excerpt Length:"
+msgstr ""
+
+#: inc/widgets.php:421
+msgid "in words"
+msgstr ""
+
+#: inc/widgets.php:475
+msgid "full (original)"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://nilambar.net/2017/07/steep-free-wordpress-theme.html"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Steep is a simple magazine theme. It is child theme of Stargazer. It "
+"provides special page template suitable for magazine and news style sites."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Nilambar Sharma"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://nilambar.net"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Home Page"
+msgstr ""
+
+#: functions.php:32
+msgctxt "sidebar"
+msgid "Header Right"
+msgstr ""
+
+#: functions.php:40
+msgctxt "sidebar"
+msgid "Home Widget Area"
+msgstr ""
+
+#: functions.php:53
+msgctxt "nav menu location"
+msgid "Footer"
+msgstr ""
