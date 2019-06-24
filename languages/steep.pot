@@ -143,7 +143,7 @@ msgstr ""
 msgid "in words"
 msgstr ""
 
-#: inc/widgets.php:475
+#: inc/widgets.php:482
 msgid "full (original)"
 msgstr ""
 

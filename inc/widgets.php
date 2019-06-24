@@ -463,6 +463,13 @@ if ( ! class_exists( 'Steep_Latest_News_Widget' ) ) :
 			return $output;
 		}
 
+		/**
+		 * Return image size options.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @return array Options.
+		 */
 		function get_image_sizes_options() {
 			global $_wp_additional_image_sizes;
 
@@ -472,7 +479,7 @@ if ( ! class_exists( 'Steep_Latest_News_Widget' ) ) :
 				$choices[ $_size ] = $_size . ' (' . get_option( $_size . '_size_w' ) . 'x' . get_option( $_size . '_size_h' ) . ')';
 			}
 
-			$choices['full'] = __( 'full (original)', 'steep' );
+			$choices['full'] = esc_html__( 'full (original)', 'steep' );
 
 			if ( ! empty( $_wp_additional_image_sizes ) && is_array( $_wp_additional_image_sizes ) ) {
 				foreach ( $_wp_additional_image_sizes as $key => $size ) {
